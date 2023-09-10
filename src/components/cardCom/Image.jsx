@@ -1,10 +1,16 @@
 import React from "react";
 
 const Image = () => {
+
+    const imgStyle = {
+        width: '350px',
+        height: '250px'
+    }
+
     return (
         <>
-            <figure>
-                <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro.jpg" />
+            <figure style={imgStyle}>
+                <img src="./images/shoes.jpg"/>
             </figure>
         </>
     )

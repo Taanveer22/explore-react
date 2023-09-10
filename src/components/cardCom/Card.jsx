@@ -6,10 +6,11 @@ import Views from "./Views";
 const Card = () => {
     return (
         <>
-            <h2>cardDiv</h2>
-            <Title></Title>
-            <Image></Image>
-            <Views></Views>
+                <div className="card w-96 bg-base-100 shadow-xl">
+                    <Title></Title>
+                    <Image></Image>
+                    <Views></Views>
+                </div>
         </>
     )
 }

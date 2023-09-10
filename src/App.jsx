@@ -1,19 +1,16 @@
 import "./App.css";
 import Card from "./components/cardCom/Card";
+import "./components/cardCom/Example";
+import Example from "./components/cardCom/Example";
 
 function App() {
-  // title data passing by props
-  let titleOne = "my title no. 1";
-  let titleTwo = "my title no. 2";
-  let titleThree = "my title no. 3";
-  // views data passing by props
-  let viewsOne = "100k";
-  let viewsTwo = "200k";
-  let viewsThree = "300k";
-  // buy now button data passing by props
-  let buyOne = "BUY NOW 1";
-  let buyTwo = "BUY NOW 2";
-  let buyThree = "BUY NOW 3";
+  // dynamic props data passing
+  // children props data passing
+  const data = [
+    { id: 1, name: "item 1" },
+    { id: 2, name: "item 2" },
+    { id: 3, name: "item 3" },
+  ];
 
   return (
     <>
@@ -21,10 +18,18 @@ function App() {
         welcome to explore react card
       </h1>
       <div className="grid grid-cols-3 gap-3 px-12">
-        <Card title={titleOne} views={viewsOne} buy={buyOne}></Card>
-        <Card title={titleTwo} views={viewsTwo} buy={buyTwo}></Card>
-        <Card title={titleThree} views={viewsThree} buy={buyThree}></Card>
+        {data.map((dataItem) => {
+          // console.log(dataItem);
+          // console.log(dataItem.name);
+          return <Card key={dataItem.id} title={dataItem.name}></Card>;
+        })}
       </div>
+
+      {/* children props syntax */}
+      <Example>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
+        molestias.
+      </Example>
     </>
   );
 }
